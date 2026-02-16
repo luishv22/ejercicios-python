@@ -1,1 +1,1 @@
-Ejercicios con ciclos de Python
+Ejercicios usando ciclos de Python
