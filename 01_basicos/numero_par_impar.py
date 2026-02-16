@@ -1,5 +1,5 @@
 #Programa que recibe un número
-#y muestra si es par o impar usando una función
+#y muestra si es par o impar 
 
 def par_impar(numero):
 
