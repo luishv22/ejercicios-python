@@ -6,12 +6,12 @@ def contar_pares_impares():
     pares =  0
     impares = 0
 
-# pedir 5 números
+    # pedir 5 números
     for i in range(5):
         num = int(input(f"Ingrese el número {i + 1}: "))
         numeros.append(num)
 
-# contar pares e impares
+    # contar pares e impares
     for n in numeros:
         if n % 2 == 0:
             pares += 1
