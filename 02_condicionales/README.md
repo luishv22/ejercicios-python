@@ -1,1 +1,1 @@
-Ejercicios con condicionales de Python
+Ejercicios usando condicionales de Python
