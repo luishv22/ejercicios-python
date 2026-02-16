@@ -4,12 +4,12 @@
 def obtener_mayor():
     numeros = []
 
-# pedir 5 números
+    # pedir 5 números
     for i in range (5):
         num = int(input(f"Ingrese el número {i +1}: "))
         numeros.append(num)
 
-# encontrar el número mayor
+    # encontrar el número mayor
     mayor = numeros[0]
     for n in numeros:
         if n > mayor:
