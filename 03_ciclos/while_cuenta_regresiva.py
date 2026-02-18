@@ -3,6 +3,7 @@
 
 def cuenta_regresiva():
     contador = 10
+    
     # ciclo while
     while contador >= 0:
         print(contador)
