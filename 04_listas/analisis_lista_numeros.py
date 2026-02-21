@@ -12,15 +12,22 @@ def lista_promedio():
 
     # bucle infinito hasta que el usuario escriba "salir"
     while True:
-        entrada = input("Ingresa un número o escribe 'salir': ")
 
-        # condición para terminar la captura
-        if entrada == "salir":
-            break
+        # evitar que marque error si el usuario ingresa texto no pedido
+        try:
+            entrada = input("Ingresa un número o escribe 'salir': ")
+
+            # condición para terminar la captura
+            if entrada.lower() == "salir":
+                break
         
-        # conversión de la entrada a entero  y almacenamiento en la lista
-        num = int(entrada)
-        numeros.append(num)
+            # conversión de la entrada a entero  y almacenamiento en la lista
+            num = int(entrada)
+            numeros.append(num)
+        
+        except ValueError:
+            print("Entrada inválida, intenta de nuevo")
+            continue
     
     # verificar que la lista no esté vacía
     if numeros:
