@@ -8,7 +8,7 @@
 # Utiliza funciones, listas y estructuras de control.
 
 # -------------------------------------------------------------
-# Calcula el promedio de una lista de números
+# Calcular el promedio de una lista de números
 # -------------------------------------------------------------
 def calcular_promedio(lista):
     # verificar que la lista no esté vacía
@@ -24,7 +24,7 @@ def calcular_promedio(lista):
     return promedio
 
 # -------------------------------------------------------------
-# Obtiene el número mayor de la lista
+# Obtener el número mayor de la lista
 # -------------------------------------------------------------
 def obtener_mayor(lista):
     # verificar que la lista no esté vacía
@@ -40,7 +40,7 @@ def obtener_mayor(lista):
     return mayor
 
 # -------------------------------------------------------------
-# Obtiene el número menor de la lista
+# Obtener el número menor de la lista
 # -------------------------------------------------------------
 def obtener_menor(lista):
     # verificar que la lista no esté vacía
@@ -57,7 +57,7 @@ def obtener_menor(lista):
     return menor
 
 # -------------------------------------------------------------
-# Cuenta cuántos números pares e impares hay
+# Contar cuántos números pares e impares hay
 # -------------------------------------------------------------
 def contar_pares_impares(lista):
     # verificar que la lista no esté vacía
@@ -74,6 +74,33 @@ def contar_pares_impares(lista):
             impares += 1
 
     return pares, impares
+
+# -------------------------------------------------------------
+# Guardar los datos en un archivo
+# -------------------------------------------------------------
+def guardar_archivo(lista, nombre_archivo="numeros.txt"):
+    try:
+        with open(nombre_archivo, "w") as archivo:
+            for n in lista:
+                archivo.write(str(n) + "\n")
+        return True
+
+    except Exception:
+        return False
+
+# -------------------------------------------------------------
+# Cargar los datos de un archivo
+# -------------------------------------------------------------
+def cargar_archivo(nombre_archivo="numeros.txt"):
+    numeros = []
+    try:
+        with open(nombre_archivo, "r") as archivo:
+            for linea in archivo:
+                numeros.append(int(linea.strip()))
+        return numeros
+
+    except Exception:
+        return []
 
 # =============================================================
 # FUNCIÓN PRINCIPAL (menú del sistema)
@@ -92,8 +119,9 @@ def mini_sistema():
         print("5. Mostrar menor")
         print("6. Contar pares e impares")
         print("7. Limpiar lista")
-        print("8. Salir")
-
+        print("8. Guardar en archivo")
+        print("9. Cargar desde archivo")
+        print("10. Salir")
         # solicitar opción 
         opcion = input("Elige una opción: ")
 
@@ -178,9 +206,35 @@ def mini_sistema():
             print("Lista limpiada correctamente")
 
         # -------------------------------------------------------------
-        # OPCIÓN 8: Salir
+        # OPCIÓN 8: Guardar datos en archivo
         # -------------------------------------------------------------
         elif opcion == "8":
+            if not numeros:
+                print("La lista está vacía, no hay nada que guardar")
+                continue
+
+            if guardar_archivo(numeros):
+                print("Datos guardados correctamente")
+            else:
+                print("Error al guardar el archivo")
+
+        # -------------------------------------------------------------
+        # OPCIÓN 9: Cargar datos de archivo
+        # -------------------------------------------------------------
+        elif opcion == "9":
+            datos = cargar_archivo()
+
+            if not datos:
+                print("No se pudieron cargar datos o el archivo está vacío")
+
+            else:
+                numeros = datos
+                print("Datos cargados correctamente")
+
+        # -------------------------------------------------------------
+        # OPCIÓN 10: Salir
+        # -------------------------------------------------------------
+        elif opcion == "10":
             print("Saliendo del programa. . . . ")
             break
 
