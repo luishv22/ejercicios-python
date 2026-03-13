@@ -8,7 +8,7 @@ estudiantes = [
     {
         "nombre": "Luis",
         "edad": 23,
-        "carrera": "Ingenieria en sistemas"
+        "carrera": "Ingeniería en sistemas"
     },
     {
         "nombre": "Carlos",
@@ -18,7 +18,7 @@ estudiantes = [
     {
         "nombre": "Aldo",
         "edad": 25,
-        "carrera": "Ingeniero bioquimico"
+        "carrera": "Ingeniería bioquímica"
     }
 ]
 
